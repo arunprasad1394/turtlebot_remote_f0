@@ -84,7 +84,7 @@ sudo chown -R $USER /dev_ws
       ```
    4. Save the map
       ```bash
-      rosrun map_server map_saver /dev_ws/src/turtlebot_apps/turtlebot_navigation/maps/<NAME>
+      rosrun map_server map_saver -f /dev_ws/src/turtlebot_apps/turtlebot_navigation/maps/<NAME>
       ```
 3. Navigation(same terminator)
    1. change the map name in the amcl_demo_iaac launch file
@@ -96,4 +96,23 @@ sudo chown -R $USER /dev_ws
    4. Estimate the pose and position of the robot
    5. Navigate to a position.
 
+4. USB camera
+   roslaunch usb_cam camera.launch
 
+
+### Debug
+1. lidar not connected
+
+   change the usb port and reboot the system
+2. how to syncronize the time
+   start a new terminal, split to two and ssh to the nuc
+   ```bash
+   sudo date --set="2024-01-16 17:22:00.000"
+   ```
+3. push the changes
+   ```bash
+   cd /dev_ws/src
+   ```
+   git add .
+   git commit -m 'your commit '
+   git push
