@@ -42,7 +42,7 @@ Once inside the container, ake ownership of the workspace with
 sudo chown -R $USER /dev_ws
 ```
 
-### Connection (Turtebot)
+### Connection (Turtlebot)
 1. Connect to the robot
    Connect the robot wifi, change the user ip address to 10.41.1.10, mask 24
 2. SSH to the robot
