@@ -81,7 +81,10 @@ class CameraStreamViewer:
 
 def main():
     viewer = CameraStreamViewer()
-    viewer.run()
+    try:
+        viewer.run()
+    except KeyboardInterrupt:
+        print("shutting down")
 
 if __name__ == '__main__':
     main()
