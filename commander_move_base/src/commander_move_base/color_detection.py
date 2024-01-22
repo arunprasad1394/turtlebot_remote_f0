@@ -1,3 +1,4 @@
+#! /usr/bin/env python3
 import cv2
 import numpy as np
 import rospy
@@ -21,7 +22,7 @@ class CameraStreamViewer:
 
         self.bridge = CvBridge()
 
-        self.rate = rospy.rate(15)
+        self.rate = rospy.Rate(30)
 
 
     def image_callback(self, msg):
@@ -38,12 +39,12 @@ class CameraStreamViewer:
 
     def run(self):
 
-        while rospy is open:
+        while True:
 
             if self.cv_img is not None:
 
                 frame = self.cv_img
-                frame = cv2.resize(frame, None, fx=0.3, fy=0.3)
+                frame = cv2.resize(frame, None, fx=0.5, fy=0.5)
                 # iphone filters()
                 # Filtering for the green color
                 # 1 lower_green = np.array([0, 170, 70], dtype="uint8")
@@ -156,3 +157,4 @@ if __name__ == '__main__':
 # # Release the video capture object and close all windows
 # cap.release()
 # cv2.destroyAllWindows()
+
